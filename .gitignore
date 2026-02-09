@@ -1,0 +1,13 @@
+# Environment variables
+.env
+appsettings.json
+
+# Build outputs
+bin/
+obj/
+node_modules/
+
+# IDE files
+.vs/
+.idea/
+*.user

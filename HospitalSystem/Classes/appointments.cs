@@ -57,12 +57,12 @@ namespace HospitalSystem.Classes
         {
             MailMessage mail = new MailMessage();
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("clinichope77@gmail.com");
+            mail.From = new MailAddress("");
             mail.To.Add(email);
             mail.Subject = subject;
             mail.Body = body;
             smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("clinichope77@gmail.com", "cqhbrskufwrfdpow");
+            smtp.Credentials = new System.Net.NetworkCredential("", "");
             smtp.EnableSsl = true;
             if (email != null)
             {
@@ -80,11 +80,11 @@ namespace HospitalSystem.Classes
         public bool sms(string message)
         {
             string tonumber = "+265992247334";
-            TwilioClient.Init("AC90823bef65619f7116d00d225a24c0ca", "ab2c4dedb7dda1adacdd25722327f523");
+            TwilioClient.Init("", "");
 
             try
             {
-                var sms = MessageResource.Create(body: message, from: new Twilio.Types.PhoneNumber("+17622382749"), to: new Twilio.Types.PhoneNumber(tonumber));
+                var sms = MessageResource.Create(body: message, from: new Twilio.Types.PhoneNumber(""), to: new Twilio.Types.PhoneNumber(tonumber));
                 return true;
             }
             catch { return false; }
